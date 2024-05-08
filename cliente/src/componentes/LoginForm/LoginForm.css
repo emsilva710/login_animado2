@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Ojuju:wght@200..800&family=Saira+Condensed:wght@100;200;300;400;500;600;700;800;900&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Saira Condensed", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.login-form-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(45deg, #ffc400, #ff8000, #FFB300);
+    background-size: 400% 400%;
+    animation: wave 8s ease infinite;
+
+}
+
+@keyframes wave {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+button{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 150px;
+    height: 50px;
+    background: #fff;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 25px;
+    color: #ff8000;
+    font-weight: 500;
+    z-index: 1;
+    transform-origin: bottom right;
+    transition: 1.5s ease-in-out;
+}
+
+button.active {
+    transform: scale(0);
+}
+
+.wrapper{
+    position: relative;
+    width: 400px;
+    height: 500px;
+}
+
+.wrapper span{
+    display: block;
+    width: 400px;
+    height: 50px;
+    background: #fff;
+    transform: translate(400px, -50px) scale(0);
+    transform-origin: right;
+    margin-bottom: -50px;
+    transition: .5s ease-in-out;
+}
+
+.wrapper.active span{
+    transition-delay: calc(.1s * var(--i));
+    margin-bottom: 0;
+    transform: translate(0, 0) scale(1);
+}
+
+.wrapper span:nth-of-type(1){
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.wrapper span:nth-of-type(10){
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow:  0 5px 10px #222222;
+}
+
+.form-wrapper {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    /* background: #fff; */
+    z-index: 2;
+    transform: translate(500px, -200px) scale(0);
+    transition: transform 1.2s ease-in-out, left 1.2s ease-in-out;
+}
+
+.wrapper.active .form-wrapper{
+    transform: translate(0, 0) scale(1);
+}
+
+h2{
+    font-size: 30px;
+    color: #000;
+    text-align: center;
+}
+
+.input-group{
+    position: relative;
+    margin: 30px 0;
+}
+
+.input-group label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 22px;
+    color: #333;
+    padding: 0 5px;
+    pointer-events: none;
+    transition: .5s;
+}
+.input-group input {
+    width: 320px;
+    height: 40px;
+    font-size: 22px;
+    color: #333;
+    padding: 0 10px;
+    background: transparent;
+    border: 1px solid #333;
+    outline: none;
+    border-radius: 5px;
+    transition: .5s;
+}
+
+.input-group input:focus~label,
+.input-group input:valid~label{
+    top: 0;
+    font-size: 16px;
+    background: #fff;
+    color: #333;
+}
+
+.input-group input:focus,
+.input-group input:valid{
+    border: 1px solid #ff8000;
+}
+
+.remember{
+    margin: -15px 0 15px;
+}
+
+.remember label{
+    color: #333;
+    font-size: 16px;
+}
+
+.remember label input{
+    accent-color: #ff8000;
+    margin-right: 3px;
+}
+
+.remember a {
+    padding-left: 35px;
+    font-size: 16px;
+    color: #ff8000;
+    text-decoration: none;
+}
+.remember a:hover{
+    text-decoration: underline;
+}
+
+.btn{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background-color: #45a049; 
+    box-shadow:  0 5px 10px #222222;
+    font-size: 25px;
+    color: #fff;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+}
+
+.btn:hover {
+    background-color: #ff8000; 
+  }
+
+
+.pie_pagina p{
+    font-size: 1.3em;
+    text-align: center;
+    color: #1f1f1f;
+    margin: 25px 0 10px;
+}
+
+.logo {
+    position: absolute;
+    top: 40%;
+    left: 48%;
+    transform: translate(-50%, -100%); /* Center the image */
+    background-image: url(../Assets/logo.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 300px;
+    height: 300px;
+    margin: auto;
+}
